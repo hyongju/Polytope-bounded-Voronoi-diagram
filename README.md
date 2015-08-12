@@ -13,4 +13,6 @@ Here are the description of the uploaded files:
 
 "vert2lcon.m" used for finding the %linear constraints defining a polyhedron in R^n given its vertices (by Matt Jacobson and Michael Keder)
 
+"inhull.m" tests if a set of points are inside a convex hull (by John D'Errico)
+
 "MY_setdiff", "MY_intersect" much fasten than MATLAB built-in setdiff(), intersect() by Nick (http://www.mathworks.com/matlabcentral/profile/authors/1739467-nick)
