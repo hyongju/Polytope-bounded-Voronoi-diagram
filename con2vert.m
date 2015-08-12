@@ -1,4 +1,6 @@
-function [V,nr] = con2vert(A,b)
+function [V,nr] = MY_con2vert(A,b)
+% Edited by Hyongju Park (Aug 11, 2015)
+% *** Changed the function to skip the error messeage 
 % CON2VERT - convert a convex set of constraint inequalities into the set
 %            of vertices at the intersections of those inequalities;i.e.,
 %            solve the "vertex enumeration" problem. Additionally,
