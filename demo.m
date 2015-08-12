@@ -33,7 +33,7 @@ end
 % vorvx     Voronoi vertices for each generator point:      n x 1 cells
 % =========================================================================
 
-[vornb,vorvx] = poly_bnd_voronoi(pos,bnd_pnts);
+[vornb,vorvx] = polybnd_voronoi(pos,bnd_pnts);
 
 %% PLOT
 
@@ -43,32 +43,32 @@ end
 
 switch d
     case 2
-        figure,
+        figure('position',[0 0 600 600],'Color',[1 1 1]);
         for i = 1:size(pos,1)
         plot(vorvx{i}(:,1),vorvx{i}(:,2),'-r')
         hold on;
         end
         plot(bnd_pnts(:,1),bnd_pnts(:,2),'-');
         hold on;
-        plot(pos(:,1),pos(:,2),'go');
+        plot(pos(:,1),pos(:,2),'Marker','o','MarkerFaceColor',[0 .75 .75],'MarkerEdgeColor','k');
         axis('equal')
         axis([0 1 0 1]);
         set(gca,'xtick',[0 1]);
         set(gca,'ytick',[0 1]);        
     case 3
-        figure,
+        figure('position',[0 0 600 600],'Color',[1 1 1]);
         for i = 1:size(pos,1)
         K = convhulln(vorvx{i});
-        trisurf(K,vorvx{i}(:,1),vorvx{i}(:,2),vorvx{i}(:,3),'FaceColor',col(i,:),'FaceAlpha',1,'EdgeAlpha',1)
+        trisurf(K,vorvx{i}(:,1),vorvx{i}(:,2),vorvx{i}(:,3),'FaceColor',col(i,:),'FaceAlpha',0.5,'EdgeAlpha',1)
         hold on;
         end
-        plot3(bnd_pnts(:,1),bnd_pnts(:,2),bnd_pnts(:,3),'*-');
-        hold on;
-        plot3(pos(:,1),pos(:,2),pos(:,3),'go');
+        scatter3(pos(:,1),pos(:,2),pos(:,3),'Marker','o','MarkerFaceColor',[0 .75 .75], 'MarkerEdgeColor','k');
         axis('equal')
         axis([0 1 0 1 0 1]);
         set(gca,'xtick',[0 1]);
         set(gca,'ytick',[0 1]);
         set(gca,'ztick',[0 1]);
+        set(gca,'FontSize',16);
+        xlabel('X');ylabel('Y');zlabel('Z');
         
 end
