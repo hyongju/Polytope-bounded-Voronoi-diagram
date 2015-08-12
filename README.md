@@ -1,5 +1,5 @@
 # Polytope-bounded-Voronoi-diagram
-  The function cacluates arbitrary polytope bounded Voronoi diagram in 2D/3D. The function calculates Voronoi diagram with the finite set of points that are bounded by an arbitrary polytope. The function calculates Voronoi diagram using linear ineqaulities formed with persendicular bisecters between any two connected points in the Deluanay triangulation.
+The function cacluates arbitrary polytope bounded Voronoi diagram in 2D/3D. The function calculates Voronoi diagram with the finite set of points that are bounded by an arbitrary polytope. The function calculates Voronoi diagram using linear ineqaulities formed with persendicular bisecters between any two connected points in the Deluanay triangulation.
 
 Here are the description of the uploaded files:
 
