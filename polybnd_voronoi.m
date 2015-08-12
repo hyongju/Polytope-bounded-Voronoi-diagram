@@ -23,8 +23,8 @@ function [vornb,vorvx] = poly_bnd_voronoi(pos,bnd_pnts)
 % -------------------------------------------------------------------------
 % Written by Hyongju Park, hyongju@gmail.com / park334@illinois.edu
 % Change logs:
-% 5  May 2015: initial release (version 0.9)
-% 11 Aug 2015: skip error messages (version 0.95) 
+% 5  May 2015: initial release (version 1.1)
+% 11 Aug 2015: skip error messages (version 1.11) 
 
 K = convhull(bnd_pnts);
 bnd_pnts = bnd_pnts(K,:);
