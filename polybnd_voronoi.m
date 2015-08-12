@@ -19,11 +19,12 @@ function [vornb,vorvx] = poly_bnd_voronoi(pos,bnd_pnts)
 % This function requires:
 %       vert2lcon.m (Matt Jacobson / Michael Keder)
 %       pbisec.m (by me)
-%       con2vert.m (Michael Keder)
+%       MY_con2vert.m (Michael Keder)
 % -------------------------------------------------------------------------
 % Written by Hyongju Park, hyongju@gmail.com / park334@illinois.edu
 % Change logs:
-% 5 May 2015: initial release (version 0.9)
+% 5  May 2015: initial release (version 0.9)
+% 11 Aug 2015: skip error messages (version 0.95) 
 
 K = convhull(bnd_pnts);
 bnd_pnts = bnd_pnts(K,:);
@@ -44,9 +45,9 @@ end
 for i = 1:size(pos,1)
     k = 0;
     for j = 1:size(TRI,1)
-        if ~isempty(intersect(i,TRI(j,:)))
+        if ~isempty(MY_intersect(i,TRI(j,:)))
             k = k + 1;
-            neib2{i}(k,:) = setdiff(TRI(j,:),i);
+            neib2{i}(k,:) = MY_setdiff(TRI(j,:),i);
         end
     end
     neib3{i} = unique(neib2{i});
@@ -72,9 +73,9 @@ for i = 1:size(pos,1)
 end
 
 % convert set of inequality constraints to the set of vertices at the
-% intersection of those inequalities used 'con2vert.m' by Michael Kleder 
+% intersection of those inequalities used 'MY_con2vert.m' by Michael Kleder 
 for i =1:size(pos,1)
-   V{i}= con2vert(Aaug{i},baug{i});
+   V{i}= MY_con2vert(Aaug{i},baug{i});
    ID{i} = convhull(V{i});
    vorvx{i} = V{i}(ID{i},:);
 end
