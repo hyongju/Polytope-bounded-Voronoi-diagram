@@ -5,10 +5,10 @@ Here are the description of the uploaded files:
 
 "demo.m"              an example
 
-"poly_bnd_voronoi.m"  main function that obtains polytope bounded Voronoi diagram 
+"polybnd_voronoi.m"  main function that obtains polytope bounded Voronoi diagram 
 
 "pbisec.m"            obtains half space created with perpendicular bisector of two points in the form Ax <= b
 
-"con2vert.m"          convert a convex set of constraint inequalities into the set of vertices at the intersections of those                          inequalities (by Michael Keder)
+"MY_con2vert.m"       convert a convex set of constraint inequalities into the set of vertices at the intersections of those                          inequalities (by Michael Keder)
 
 "vert2lcon.m"         used for finding the %linear constraints defining a polyhedron in R^n given its vertices (by Matt Jacobson                       and Michael Keder)
