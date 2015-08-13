@@ -1,7 +1,8 @@
 function [vornb,vorvx] = poly_bnd_voronoi(pos,bnd_pnts)
 % -------------------------------------------------------------------------
 % -------------------------------------------------------------------------
-% [Voronoi neighbor,Voronoi vertices] = voronoi_3d(points, boundary)
+% by Hyongju Park (park334@illinois.edu)
+% [Voronoi neighbor,Voronoi vertices] = poly_bnd_voronoi(points, boundary)
 % Given n points a bounded space in R^2/R^3, this function calculates
 % Voronoi neighbor/polygons associated with each point (as a generator).
 % =========================================================================
