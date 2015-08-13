@@ -1,8 +1,7 @@
-function [vornb,vorvx] = poly_bnd_voronoi(pos,bnd_pnts)
+function [vornb,vorvx,A,b] = polybnd_voronoi(pos,bnd_pnts)
 % -------------------------------------------------------------------------
 % -------------------------------------------------------------------------
-% by Hyongju Park (park334@illinois.edu)
-% [Voronoi neighbor,Voronoi vertices] = poly_bnd_voronoi(points, boundary)
+% [Voronoi neighbor,Voronoi vertices] = voronoi_3d(points, boundary)
 % Given n points a bounded space in R^2/R^3, this function calculates
 % Voronoi neighbor/polygons associated with each point (as a generator).
 % =========================================================================
@@ -20,12 +19,12 @@ function [vornb,vorvx] = poly_bnd_voronoi(pos,bnd_pnts)
 % This function requires:
 %       vert2lcon.m (Matt Jacobson / Michael Keder)
 %       pbisec.m (by me)
-%       MY_con2vert.m (Michael Keder)
+%       con2vert.m (Michael Keder)
 % -------------------------------------------------------------------------
 % Written by Hyongju Park, hyongju@gmail.com / park334@illinois.edu
 % Change logs:
-% 5  May 2015: initial release (version 1.1)
 % 11 Aug 2015: skip error messages (version 1.11) 
+% 5  May 2015: initial release (version 1.1)
 
 K = convhull(bnd_pnts);
 bnd_pnts = bnd_pnts(K,:);
@@ -66,7 +65,7 @@ for i = 1:size(pos,1)
         [A{i}(k,:),b{i}(k,:)] = pbisec(pos(i,:), pos(vornb{i}(j),:));
     end
 end
-% obtain intersection between bisectors + boundary
+% obtain MY_intersection between bisectors + boundary
 
 for i = 1:size(pos,1)
     Aaug{i} = [A{i};Abnd];
@@ -74,7 +73,7 @@ for i = 1:size(pos,1)
 end
 
 % convert set of inequality constraints to the set of vertices at the
-% intersection of those inequalities used 'MY_con2vert.m' by Michael Kleder 
+% intersection of those inequalities used 'con2vert.m' by Michael Kleder 
 for i =1:size(pos,1)
    V{i}= MY_con2vert(Aaug{i},baug{i});
    ID{i} = convhull(V{i});
