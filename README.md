@@ -1,7 +1,7 @@
 # Polytope-bounded-Voronoi-diagram
 The function calculates Voronoi diagram with the finite set of points that are bounded by an arbitrary polytope. The Voronoi diagram is obtained using linear ineqaulities formed with persendicular bisecters between any two connected points in the Deluanay triangulation.
 
-Here are the description of the uploads.
+Here are the description of the uploads:
 
 "demo.m" an example
 
@@ -15,4 +15,4 @@ Here are the description of the uploads.
 
 "inhull.m" tests if a set of points are inside a convex hull (written by John D'Errico)
 
-"MY_setdiff.m", "MY_intersect.m" are much fasten than MATLAB built-in "setdiff.m", "intersect.m". Two functions are written by Nick (http://www.mathworks.com/matlabcentral/profile/authors/1739467-nick)
+"MY_setdiff.m", "MY_intersect.m" are used, which are much faster than the MATLAB built-in functions "setdiff.m", "intersect.m". Those two functions are written by Nick (http://www.mathworks.com/matlabcentral/profile/authors/1739467-nick)
