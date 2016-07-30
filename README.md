@@ -5,7 +5,7 @@ This is a MATLAB script
 The function calculates Voronoi diagram with the finite set of points that are bounded by an arbitrary polytope. The Voronoi diagram is obtained using linear ineqaulities formed with persendicular bisecters between any two connected points in the Deluanay triangulation.
 
 ## Description
-'''
+```
 
 "demo.m"	an example
 
@@ -21,6 +21,6 @@ The function calculates Voronoi diagram with the finite set of points that are b
 
 "MY_setdiff.m", "MY_intersect.m"	are used, which are much faster than the MATLAB built-in functions "setdiff.m", "intersect.m". Those two functions are written by Nick (http://www.mathworks.com/matlabcentral/profile/authors/1739467-nick)
 
-'''
+```
 
 **Note:** This is still for experimental use ONLY, there are bugs inhereted from "vert2lcon.m"
