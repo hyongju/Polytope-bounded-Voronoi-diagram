@@ -7,19 +7,21 @@ The function calculates Voronoi diagram with the finite set of points that are b
 ## Description
 ```
 
-"demo.m"	an example
 
-"polybnd_voronoi.m"	main function that obtains polytope bounded Voronoi diagram 
+| File name                     | Description                                                          |
+| ----------------------------- | :------------------------------------------------------------------: |
+| demo.m                        | an example script                                                    |
+| polybnd_voronoi.m             | main function that obtains polytope bounded Voronoi diagram          |
+| pbisec.m                      | a function computes perpendicular bisectors of two points            |
+| MY_con2vert.m                 | inequality constraints to set of vertices (written by Michael Keder) |
+| vert2lcon.m                   | a function is used to find linear inequalities from a polyhedron     |
+|                               | (written by Matt Jacobson and Michael Keder)                         |
+| inhull.m                      | a test function to see if a set of points are inside some convex hull|
+|                               | (written by John D'Errico)                                           |
+| MY_setdiff.m, MY_intersect.m  | fuctions which are much faster than MATLAB built-in functions        |
+|                               | (written by Nick, see http://www.mathworks.com/matlabcentral/profile |
+|                               | authors/1739467-nick)                                                |
 
-"pbisec.m"	obtains half space created with perpendicular bisector of two points in the form Ax <= b
-
-"MY_con2vert.m"	convert a convex set of constraint inequalities into the set of vertices at the intersections of those inequalities (written by Michael Keder)
-
-"vert2lcon.m"	used for finding the %linear constraints defining a polyhedron in R^n given its vertices (written by Matt Jacobson and Michael Keder)
-
-"inhull.m"	tests if a set of points are inside a convex hull (written by John D'Errico)
-
-"MY_setdiff.m", "MY_intersect.m"	are used, which are much faster than the MATLAB built-in functions "setdiff.m", "intersect.m". Those two functions are written by Nick (http://www.mathworks.com/matlabcentral/profile/authors/1739467-nick)
 
 ```
 
