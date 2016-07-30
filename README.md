@@ -23,4 +23,4 @@ The function calculates Voronoi diagram with the finite set of points that are b
 
 
 
-**Note:** This is still for experimental use ONLY, there are bugs inhereted from "vert2lcon.m"
+**Note:** This is still for experimental use ONLY!
