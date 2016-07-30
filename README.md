@@ -8,7 +8,7 @@ The function calculates Voronoi diagram with the finite set of points that are b
 
 
 | File name                     | Description                                                          |
-| ----------------------------- | :------------------------------------------------------------------: |
+| ----------------------------- | ---------------------------------------------------------------------|
 | demo.m                        | an example script                                                    |
 | polybnd_voronoi.m             | main function that obtains polytope bounded Voronoi diagram          |
 | pbisec.m                      | a function computes perpendicular bisectors of two points            |
