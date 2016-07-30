@@ -1,5 +1,6 @@
 % This DEMO calculates a Voronoi diagram with arbitrary points in arbitrary
-% polytope in 2D/3D
+% polytope/polyheron in 2D/3D
+
 clear all;close all;clc
 %% generate random samples
 n = 200;        % number of points
