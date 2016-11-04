@@ -6,12 +6,13 @@ clear all;close all;clc
 n = 200;        % number of points
 m = 20;         % number of boundary point-candidates
 d = 3;          % dimension of the space
+tol = 0.001;            % tolerance value used in "inhull.m" (larger value high precision, possible numerical error)
 pos0 = rand(n,d);       % generate random points
 bnd0 = rand(m,d);       % generate boundary point-candidates
 K = convhull(bnd0);
 bnd_pnts = bnd0(K,:);   % take boundary points from vertices of convex polytope formed with the boundary point-candidates
 %% take points that are in the boundary convex polytope
-in = inhull(pos0,bnd0); 
+in = inhull(pos0,bnd0,[],tol); 
 % inhull.m is written by John D'Errico that efficiently check if points are
 % inside a convex hull in n dimensions
 % We use the function to choose points that are inside the defined boundary
