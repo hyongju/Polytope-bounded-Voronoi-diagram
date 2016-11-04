@@ -51,7 +51,7 @@ switch d
         end
         plot(bnd_pnts(:,1),bnd_pnts(:,2),'-');
         hold on;
-        plot(pos(:,1),pos(:,2),'Marker','o','MarkerFaceColor',[0 .75 .75],'MarkerEdgeColor','k');
+        plot(pos(:,1),pos(:,2),'Marker','o','MarkerFaceColor',[0 .75 .75],'MarkerEdgeColor','k','LineStyle','none');
         axis('equal')
         axis([0 1 0 1]);
         set(gca,'xtick',[0 1]);
@@ -63,7 +63,7 @@ switch d
         trisurf(K,vorvx{i}(:,1),vorvx{i}(:,2),vorvx{i}(:,3),'FaceColor',col(i,:),'FaceAlpha',0.5,'EdgeAlpha',1)
         hold on;
         end
-        scatter3(pos(:,1),pos(:,2),pos(:,3),'Marker','o','MarkerFaceColor',[0 .75 .75], 'MarkerEdgeColor','k');
+        scatter3(pos(:,1),pos(:,2),pos(:,3),'Marker','o','MarkerFaceColor',[0 .75 .75], 'MarkerEdgeColor','k','LineStyle','none');
         axis('equal')
         axis([0 1 0 1 0 1]);
         set(gca,'xtick',[0 1]);
