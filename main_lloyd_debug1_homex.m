@@ -27,13 +27,14 @@ n1 = 10000;
 p2  = net(p1_1,n1);
 p_sav{1} = pos;
 n1 = size(p2,1);
-adv = [1 2 3 4 5];
+% adv = [1 2 3 4 5];
+adv = [];
 % adv = [];
 type = 1;
 %% call function
 for t = 1:stage
     t
-    [~,vorvx{t},~,~] = voronoi_3da(pos,bnd_pnts);
+    [~,vorvx{t},~,~] = polybnd_voronoi(pos,bnd_pnts);
     sum3{t} = lloyd_cvt_fin(vorvx{t},bnd_pnts,p2,pos,n1,adv);
     [cst3(t),indx{t}]= lloyd_cost_fin(vorvx{t},bnd_pnts,p2,pos,n1,eta,adv,type);
     if type == 2 || type == 3
@@ -48,16 +49,16 @@ for t = 1:stage
     p_sav{t+1} = pos;
 end    
 size(cst3)
-k_p = 4;
-res = 30;
-M = animation_func9vor0_fin2(p_sav',res,n,0,bnd_pnts,k_p,adv);
-h2 = figure('position',[100 100 600 600],'Color',[1 1 1]);
-axis('square')
-axis([0 1 0 1 0 1])
-axis('off')
-set(gca,'xtick',[]);
-set(gca,'ytick',[]);
-movie(h2,M,1,30);
+% k_p = 4;
+% res = 30;
+% M = animation_func9vor0_fin2(p_sav',res,n,0,bnd_pnts,k_p,adv);
+% h2 = figure('position',[100 100 600 600],'Color',[1 1 1]);
+% axis('square')
+% axis([0 1 0 1 0 1])
+% axis('off')
+% set(gca,'xtick',[]);
+% set(gca,'ytick',[]);
+% movie(h2,M,1,30);
 % movie2avi(M, 'lloyd_wish2.avi', 'compression', 'None','quality',100,'fps',30);
 
 figure,

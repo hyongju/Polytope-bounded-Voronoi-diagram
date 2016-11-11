@@ -1,6 +1,7 @@
 function [V,nr] = MY_con2vert(A,b)
 % Edited by Hyongju Park (Aug 11, 2015)
 % *** Changed the function to skip the error messeage 
+% ----------------------------------------------------
 % CON2VERT - convert a convex set of constraint inequalities into the set
 %            of vertices at the intersections of those inequalities;i.e.,
 %            solve the "vertex enumeration" problem. Additionally,
@@ -147,14 +148,20 @@ function [V,nr] = MY_con2vert(A,b)
 %     view(x,0)
 %     drawnow
 % end
-
+flg = 0;
 c = A\b;
-if ~all(A*c < b);
-    [c,~,ef] = fminsearch(@obj,c,'params',{A,b});
+if ~all(A*c < b)
+    %obj1 = @(c) obj(c, {A,b});
+    [c,~,ef] = fminsearch( @(x)obj(x, {A,b}),c);
+%     [c,~,ef] = fminsearch(@obj,c,A,b);
     if ef ~= 1
-        error('Unable to locate a point within the interior of a feasible region.')
+        flg = 1;
     end
 end
+if flg ==1
+    V = [];
+%     error('Unable to locate a point within the interior of a feasible region.')
+else
 b = b - A*c;
 D = A ./ repmat(b,[1 size(A,2)]);
 [~,v2] = convhulln([D;zeros(1,size(D,2))]);
@@ -171,10 +178,14 @@ end
 V = G + repmat(c',[size(G,1),1]);
 [~,I]=unique(num2str(V,6),'rows');
 V=V(I,:);
+end
 return
-function d = obj(c,params)
-A=params{1};
-b=params{2};
+function d = obj(c,param)
+A = param{1};
+b = param{2};
+% ,A,b
+% A=params{1};
+% b=params{2};
 d = A*c-b;
 k=(d>=-1e-15);
 d(k)=d(k)+1;
