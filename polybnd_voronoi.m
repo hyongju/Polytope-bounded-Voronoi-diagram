@@ -1,4 +1,4 @@
-function [vornb,vorvx,A,b] = polybnd_voronoi(pos,bnd_pnts)
+function [vornb,vorvx,Aaug,baug] = polybnd_voronoi(pos,bnd_pnts)
 % -------------------------------------------------------------------------
 % -------------------------------------------------------------------------
 % [Voronoi neighbor,Voronoi vertices] = voronoi_3d(points, boundary)
