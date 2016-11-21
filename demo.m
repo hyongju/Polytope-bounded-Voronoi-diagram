@@ -6,7 +6,7 @@ clear all;close all;clc
 n = 200;        % number of points
 m = 20;         % number of boundary point-candidates
 d = 3;          % dimension of the space
-tol = 0.001;            % tolerance value used in "inhull.m" (larger value high precision, possible numerical error)
+tol = 1e-07;            % tolerance value used in "inhull.m" (larger value high precision, possible numerical error)
 pos0 = rand(n,d);       % generate random points
 bnd0 = rand(m,d);       % generate boundary point-candidates
 K = convhull(bnd0);
