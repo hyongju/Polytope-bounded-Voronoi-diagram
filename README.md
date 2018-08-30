@@ -2,7 +2,7 @@
 This is a MATLAB script
 
 ## What is this for?
-The function calculates Voronoi diagram with the finite set of points that are bounded by an arbitrary polytope. The Voronoi diagram is obtained using linear ineqaulities formed with persendicular bisecters between any two connected points in the Deluanay triangulation.
+The function calculates Voronoi diagram with the finite set of points that are bounded by an arbitrary polytope. The Voronoi diagram is obtained using linear ineqaulities formed with perpendicular bisecters between any two connected points in the Deluanay triangulation.
 
 ## Description
 
