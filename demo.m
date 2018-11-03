@@ -4,7 +4,7 @@
 clear all;close all;clc
 %% generate random samples
 n = 200;        % number of points
-m = 20;         % number of boundary point-candidates
+m = 50;         % number of boundary point-candidates
 d = 3;          % dimension of the space
 tol = 1e-07;            % tolerance value used in "inhull.m" (larger value high precision, possible numerical error)
 pos0 = rand(n,d);       % generate random points
