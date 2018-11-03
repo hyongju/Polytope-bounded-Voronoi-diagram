@@ -166,9 +166,9 @@ b = b - A*c;
 D = A ./ repmat(b,[1 size(A,2)]);
 [~,v2] = convhulln([D;zeros(1,size(D,2))]);
 [k,v1] = convhulln(D);
-if v2 > v1
-    error('Non-bounding constraints detected. (Consider box constraints on variables.)')
-end
+%if v2 > v1
+%    error('Non-bounding constraints detected. (Consider box constraints on variables.)')
+%end
 nr = unique(k(:));
 G  = zeros(size(k,1),size(D,2));
 for ix = 1:size(k,1)
