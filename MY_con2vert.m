@@ -150,7 +150,8 @@ function [V,nr] = MY_con2vert(A,b)
 % end
 flg = 0;
 c = A\b;
-if ~all(A*c < b)
+tol = 1e-07;
+if ~all(abs(A*c - b) < tol)
     %obj1 = @(c) obj(c, {A,b});
     [c,~,ef] = fminsearch( @(x)obj(x, {A,b}),c);
 %     [c,~,ef] = fminsearch(@obj,c,A,b);
