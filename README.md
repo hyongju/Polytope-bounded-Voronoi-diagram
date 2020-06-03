@@ -24,3 +24,5 @@ The function calculates Voronoi diagram with the finite set of points that are b
 
 
 **Note:** This is still for experimental use ONLY!
+
+[![View Polytope bounded Voronoi diagram in 2D and 3D on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/50772-polytope-bounded-voronoi-diagram-in-2d-and-3d)
